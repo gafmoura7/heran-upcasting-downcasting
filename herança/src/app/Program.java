@@ -8,20 +8,19 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		Account acc = new Account("Alex", 1001, 0.0);
-		BusinessAccount bacc = new BusinessAccount("Maria", 1002, 0.0, 500.0);
+
+		Account acc1 = new Account("Alex", 1001, 1000.0);
 		
-		//UPCASTING 
-		
-		Account acc1 = bacc;
-		Account acc2 = new BusinessAccount("Bob", 1003, 0.0, 300.0);
-		Account acc3 = new SavingAccount("José", 1004, 0.0, 0.01);
-		
-		//DOWNCASTING
-		
-		BusinessAccount acc4 = (BusinessAccount)acc2;
-		acc4.loan(100.0);
+		acc1.withdraw(200.0);
+		System.out.println(acc1.getBalance());
 		
 		
+		Account acc2 = new SavingAccount("maira", 1002, 1000.0, 0.01);
+		acc2.withdraw(200);
+		System.out.println(acc2.getBalance());
+		
+		Account acc3 = new BusinessAccount("bob", 1003, 1000.0, 500.0);
+		acc3.withdraw(200.0);
+		System.out.println(acc3.getBalance());
 	}
 }
